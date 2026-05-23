@@ -1,10 +1,10 @@
 const projects = [
   {
-    title: 'E-Commerce Platform',
+    title: 'Day-Stride-Scheduling',
     description:
       'A full-featured online store with payment integration, inventory management, and admin dashboard built for scale.',
     tags: ['React', 'Node.js', 'MongoDB'],
-    image: '/images/project-ecommerce.jpg',
+    image: '/images/image.png',
   },
   {
     title: 'Task Management App',

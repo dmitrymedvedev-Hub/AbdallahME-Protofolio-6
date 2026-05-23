@@ -1,10 +1,5 @@
-// Database pool - kept for reference
-// For a frontend-only Vite app, database access should be through an API
-// To use a backend, create a separate Node.js/Express server
-
-// Example usage (commented out):
-/*
-import mysql from 'mysql2/promise';
+declare const process: any
+import mysql from 'mysql2/promise'
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST || 'localhost',
@@ -14,7 +9,6 @@ const pool = mysql.createPool({
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
-});
+})
 
-export default pool;
-*/
+export default pool

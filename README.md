@@ -1,73 +1,159 @@
-# React + TypeScript + Vite
+# Kimi AI Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website showcasing innovative design and cutting-edge technology. Built with React, TypeScript, Vite, and Tailwind CSS, featuring interactive 3D elements and smooth animations.
 
-Currently, two official plugins are available:
+![Portfolio Preview](./public/images/hero-bg.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **Modern UI Design**: Clean, contemporary interface with attention to detail
+- **Interactive 3D Elements**: Engaging Three.js 3D ASCII sphere animation in the hero section
+- **Smooth Animations**: Enhanced user experience with GSAP-powered scroll animations
+- **Fully Responsive**: Optimized for all device sizes from mobile to desktop
+- **Component-Rich Interface**: Over 40 reusable UI components from shadcn/ui
+- **Performance Optimized**: Fast loading times and smooth interactions
+- **Mobile-Friendly Navigation**: Intuitive menu system for all devices
+- **Contact Integration**: Functional contact form for easy communication
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend**: React 19 + TypeScript
+- **Build Tool**: Vite 7.2.4
+- **Styling**: Tailwind CSS 3.4.19 + Tailwind Animate
+- **Routing**: React Router v7
+- **Animations**: GSAP 3.15.0, Three.js 0.184.0, Lenis smooth scrolling
+- **UI Components**: Shadcn/UI (40+ components)
+- **Icons**: Lucide React
+- **Data Visualization**: Recharts
+- **Form Management**: React Hook Form + Zod validation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Live Demo
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Check out the live deployment: [Portfolio Demo](https://your-demo-url.com)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📋 Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- [Node.js](https://nodejs.org/) 18 or higher
+- npm or yarn package manager
+
+## 🛠️ Installation & Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/username/portfolio-kimi-ai.git
+   cd portfolio-kimi-ai
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open your browser to `http://localhost:3000`
+
+## ▶️ Available Scripts
+
+- `npm run dev` - Start the development server with hot reloading
+- `npm run build` - Create a production-ready build
+- `npm run preview` - Preview the production build locally
+- `npm run lint` - Check code quality and identify potential issues
+
+## 📁 Project Structure
+
+```
+src/
+  ├── components/          # Reusable React components
+  │   ├── ui/             # Shadcn/ui components
+  │   ├── Navigation.tsx   # Navigation header
+  │   ├── Layout.tsx       # Main layout wrapper
+  │   ├── Footer.tsx       # Footer component
+  │   └── AsciiSphere.tsx  # 3D ASCII sphere animation
+  ├── sections/            # Page sections
+  │   ├── HeroSection.tsx
+  │   ├── ProjectsSection.tsx
+  │   ├── SkillsSection.tsx
+  │   ├── AboutSnippet.tsx
+  │   └── ContactSection.tsx
+  ├── pages/               # Page-level components
+  │   ├── HomePage.tsx
+  │   └── AboutPage.tsx
+  ├── hooks/               # Custom React hooks
+  │   └── useScrollAnimation.ts
+  ├── lib/                 # Utility functions and helpers
+  │   └── utils.ts
+  ├── App.tsx              # Main application component
+  ├── main.tsx             # Application entry point
+  └── index.css            # Global styles
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎨 Customization
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+To customize this portfolio for your own use:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Update the content in the [sections](./src/sections) folder with your information
+2. Replace images in the `public/images` directory
+3. Modify color schemes in `tailwind.config.js`
+4. Adjust fonts and typography in the CSS files
+5. Update metadata in `index.html`
+
+## 🌐 Deployment
+
+Deploy this application with popular hosting platforms:
+
+### Netlify
 ```
+npm run build
+```
+Then drag and drop the `dist` folder to Netlify.
+
+### Vercel
+```
+npm run build
+```
+Connect your GitHub repository to Vercel for automatic deployments.
+
+### GitHub Pages
+```
+npm run build
+```
+Enable GitHub Pages in your repository settings, pointing to the `dist` folder.
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can contribute:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Commit your changes (`git commit -m 'Add amazing feature'`)
+5. Push to the branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request
+
+Please make sure your code adheres to the existing style and includes appropriate documentation.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 💬 Author
+
+**Kimi AI**
+
+- Portfolio: [your-portfolio.com](https://your-portfolio.com)
+- GitHub: [@your-username](https://github.com/your-username)
+- LinkedIn: [your-linkedin](https://linkedin.com/in/your-profile)
+
+## 🔧 Support & Issues
+
+If you encounter any issues or bugs, please open an issue in the GitHub repository. For questions or support, feel free to contact me through the channels above.
+
+## 🙏 Acknowledgments
+
+- Inspired by modern design principles and creative portfolios
+- Built with the amazing open-source tools and libraries listed in the tech stack
+- Special thanks to the contributors of all the libraries used in this project

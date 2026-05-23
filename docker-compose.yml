@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0
+    container_name: proto_db
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      # root password (fallback to Abdallah1 if DB_ROOT_PASSWORD not set)
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD:-Abdallah1}"
+      # create initial database
+      MYSQL_DATABASE: "${DB_NAME:-portfolio_db}"
+      # create a non-root user if DB_USER/DB_PASSWORD are provided in .env
+      MYSQL_USER: "${DB_USER}"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+volumes:
+  db_data:

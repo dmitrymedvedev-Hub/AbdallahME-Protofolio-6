@@ -48,7 +48,7 @@ function SkillsSection() {
             style={{
               width: '80px',
               height: '3px',
-              background: '#b04a3e',
+              background: '#3c1c10',
             }}
           />
         </div>

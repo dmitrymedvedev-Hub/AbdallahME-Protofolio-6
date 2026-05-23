@@ -2,9 +2,8 @@ function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative"
+      className="relative bg-[#3c1c10]"
       style={{
-        background: '#f6f1ee',
         zIndex: 1,
         padding: '120px 0',
       }}
@@ -13,7 +12,7 @@ function ContactSection() {
         <h2
           data-animate="header"
           className="font-display text-[32px] md:text-[48px]"
-          style={{ color: '#3c1c10' }}
+          style={{ color: '#f6f1ee' }}
         >
           Let's Work Together
         </h2>
@@ -27,7 +26,7 @@ function ContactSection() {
           <div>
             <label
               className="font-body text-[14px] font-medium block mb-2"
-              style={{ color: '#3c1c10' }}
+                style={{ color: '#f6f1ee' }}
             >
               Name
             </label>
@@ -53,7 +52,7 @@ function ContactSection() {
           <div className="mt-5">
             <label
               className="font-body text-[14px] font-medium block mb-2"
-              style={{ color: '#3c1c10' }}
+                style={{ color: '#f6f1ee' }}
             >
               Email
             </label>
@@ -79,7 +78,7 @@ function ContactSection() {
           <div className="mt-5">
             <label
               className="font-body text-[14px] font-medium block mb-2"
-              style={{ color: '#3c1c10' }}
+                style={{ color: '#f6f1ee' }}
             >
               Message
             </label>
@@ -118,8 +117,8 @@ function ContactSection() {
 
         <div data-animate="fade" data-delay="0.3" className="mt-10">
           <p
-            className="font-body text-[14px]"
-            style={{ color: 'rgba(60, 28, 16, 0.5)' }}
+              className="font-body text-[14px]"
+            style={{ color: 'rgba(246, 241, 238, 0.7)' }}
           >
             Or reach me at
           </p>
@@ -127,9 +126,9 @@ function ContactSection() {
             <a
               href="mailto:hello@abdallah.dev"
               className="font-body text-[15px] font-medium transition-colors duration-200"
-              style={{ color: '#3c1c10' }}
+              style={{ color: '#f6f1ee' }}
               onMouseEnter={(e) => (e.currentTarget.style.color = '#b04a3e')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#3c1c10')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#f6f1ee')}
             >
               hello@abdallah.dev
             </a>
@@ -138,9 +137,9 @@ function ContactSection() {
               target="_blank"
               rel="noopener noreferrer"
               className="font-body text-[15px] font-medium transition-colors duration-200"
-              style={{ color: '#3c1c10' }}
+              style={{ color: '#f6f1ee' }}
               onMouseEnter={(e) => (e.currentTarget.style.color = '#b04a3e')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#3c1c10')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#f6f1ee')}
             >
               GitHub
             </a>
@@ -149,9 +148,9 @@ function ContactSection() {
               target="_blank"
               rel="noopener noreferrer"
               className="font-body text-[15px] font-medium transition-colors duration-200"
-              style={{ color: '#3c1c10' }}
+              style={{ color: '#f6f1ee' }}
               onMouseEnter={(e) => (e.currentTarget.style.color = '#b04a3e')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#3c1c10')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#f6f1ee')}
             >
               LinkedIn
             </a>
