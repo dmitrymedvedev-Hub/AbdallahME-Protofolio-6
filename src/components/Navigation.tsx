@@ -35,6 +35,7 @@ function Navigation() {
   }
 
   const navLinks = [
+    { label: 'Home', path: '/', type: 'route' as const },
     { label: 'Work', path: '/work', type: 'route' as const },
     { label: 'About', path: '/about', type: 'route' as const },
     { label: 'Contact', path: '/start-project', type: 'route' as const },
