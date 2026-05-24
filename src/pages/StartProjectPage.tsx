@@ -2,40 +2,21 @@ import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import useScrollAnimation from '../hooks/useScrollAnimation'
 
+const services = ['Portfolio websites', 'Product landing pages', 'Dashboards', 'Web apps']
+const qualities = ['Clean structure', 'Clear communication', 'Fast turnaround', 'Polished visuals']
 const processSteps = [
   {
-    title: '1. Share the idea',
-    description:
-      'Tell me what you want to build, who it is for, and what success should look like.',
+    title: 'Understand',
+    description: 'We define the goal, audience, and the simplest path to a useful result.',
   },
   {
-    title: '2. Shape the scope',
-    description:
-      'I help organize the structure, define the features, and keep the work practical and focused.',
+    title: 'Design',
+    description: 'I shape the layout, content flow, and interface direction into a modern system.',
   },
   {
-    title: '3. Build with clarity',
-    description:
-      'I turn the plan into a polished product with clean code, strong visuals, and thoughtful interaction.',
+    title: 'Build',
+    description: 'The final product is implemented with clean code, responsive behavior, and a professional finish.',
   },
-]
-
-const services = [
-  'Portfolio websites',
-  'Business websites',
-  'Product landing pages',
-  'Dashboards and admin tools',
-  'Custom web applications',
-  'Redesign and modernization',
-]
-
-const qualities = [
-  'Professional visual style',
-  'Fast and responsive UX',
-  'Maintainable code structure',
-  'Clear communication',
-  'Modern design system',
-  'Mobile-first layout',
 ]
 
 function StartProjectPage() {
@@ -43,58 +24,22 @@ function StartProjectPage() {
 
   return (
     <>
-      <section
-        className="relative overflow-hidden"
-        style={{
-          background:
-            'linear-gradient(180deg, rgba(var(--color-text-rgb), 0.98) 0%, rgba(var(--color-text-rgb), 0.92) 100%)',
-          padding: '160px 0 110px',
-        }}
-      >
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-[var(--color-accent)]/15 blur-3xl" />
-          <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
-        </div>
-
-        <div className="relative max-w-[1200px] mx-auto px-5 md:px-10 grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
+      <section className="page-shell-dark section-pad-hero">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-10 grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
           <div data-animate="fade">
-            <p className="font-accent text-[18px] md:text-[24px]" style={{ color: 'var(--color-accent)' }}>
-              Start Project
-            </p>
-            <h1 className="font-display text-[42px] md:text-[72px] leading-[1.05] mt-4" style={{ color: 'var(--color-background)' }}>
-              Let’s build something modern, useful, and polished.
+            <p className="font-accent text-[18px] md:text-[24px] text-[var(--color-accent)]">Start Project</p>
+            <h1 className="mt-4 font-display text-[42px] md:text-[74px] leading-[0.95] section-title section-title-dark max-w-[10ch]">
+              Let&apos;s build something modern and polished.
             </h1>
-            <p
-              className="font-body text-[17px] md:text-[19px] leading-relaxed mt-6 max-w-[680px]"
-              style={{ color: 'rgba(var(--color-background-rgb), 0.72)' }}
-            >
-              This is the best place to begin a new website or product. Share your goal, and I’ll help turn it into a
-              clean, professional experience that feels strong from the first screen to the final detail.
+            <p className="mt-6 max-w-[720px] font-body text-[17px] md:text-[19px] section-copy-dark">
+              Share your goal and I&apos;ll help turn it into a clean, professional experience from the first screen to the last detail.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mt-8">
-              <Link
-                to="/#contact"
-                className="font-body text-[16px] font-medium px-10 py-4 rounded-full transition-colors duration-200"
-                style={{ background: 'var(--color-accent)', color: 'var(--color-background)' }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--color-accent-600)')}
-                onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--color-accent)')}
-              >
-                Quick Contact
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <Link to="/about-more" className="btn-primary font-body text-[16px] font-medium px-10 py-4 inline-flex justify-center">
+                About Me
               </Link>
-              <Link
-                to="/work"
-                className="font-body text-[16px] font-medium px-10 py-4 rounded-full border-[1.5px] transition-all duration-200"
-                style={{ borderColor: 'rgba(var(--color-background-rgb), 0.26)', color: 'var(--color-background)' }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'var(--color-background)'
-                  e.currentTarget.style.color = 'var(--color-text)'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'transparent'
-                  e.currentTarget.style.color = 'var(--color-background)'
-                }}
-              >
+              <Link to="/work" className="btn-secondary border-white/20 text-[var(--color-background)] font-body text-[16px] font-medium px-10 py-4 inline-flex justify-center hover:bg-white hover:text-[var(--color-text)]">
                 View Work
               </Link>
             </div>
@@ -102,33 +47,21 @@ function StartProjectPage() {
 
           <div data-animate="stagger" className="grid gap-4">
             <div className="rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8 backdrop-blur-sm shadow-[0_18px_50px_rgba(0,0,0,0.18)]">
-              <p className="font-body text-[13px] uppercase tracking-[2px]" style={{ color: 'rgba(var(--color-background-rgb), 0.55)' }}>
-                Best for
-              </p>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-5">
+              <p className="section-eyebrow section-eyebrow-dark">Best for</p>
+              <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {services.map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-2xl border border-white/10 bg-black/10 px-4 py-3 font-body text-[15px]"
-                    style={{ color: 'var(--color-background)' }}
-                  >
+                  <li key={item} className="surface-card-soft px-4 py-3 text-[var(--color-background)]">
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="rounded-[28px] border border-white/10 bg-[var(--color-accent)]/10 p-6 md:p-8 backdrop-blur-sm">
-              <p className="font-body text-[13px] uppercase tracking-[2px]" style={{ color: 'rgba(var(--color-background-rgb), 0.7)' }}>
-                What you get
-              </p>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-5">
+            <div className="rounded-[28px] border border-white/10 bg-[rgba(var(--color-accent-rgb),0.12)] p-6 md:p-8 backdrop-blur-sm">
+              <p className="section-eyebrow section-eyebrow-dark">What you get</p>
+              <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {qualities.map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 font-body text-[15px]"
-                    style={{ color: 'var(--color-background)' }}
-                  >
+                  <li key={item} className="surface-card-soft px-4 py-3 text-[var(--color-background)]">
                     {item}
                   </li>
                 ))}
@@ -138,140 +71,63 @@ function StartProjectPage() {
         </div>
       </section>
 
-      <section style={{ background: 'var(--color-background)', padding: '120px 0' }}>
+      <section className="section-pad-xl bg-[var(--color-background)]">
         <div className="max-w-[1200px] mx-auto px-5 md:px-10">
           <div data-animate="header">
-            <h2 className="font-display text-[32px] md:text-[48px]" style={{ color: 'var(--color-text)' }}>
-              Simple process, clear result
-            </h2>
-            <div className="mt-3 h-[3px] w-20 rounded-full bg-[var(--color-accent)]" />
+            <h2 className="font-display text-[32px] md:text-[48px] section-title">Simple process, clear result</h2>
+            <div className="mt-3 accent-rule" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16" data-animate="stagger">
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6" data-animate="stagger">
             {processSteps.map((step) => (
-              <div
-                key={step.title}
-                className="rounded-[26px] border border-[var(--color-border)] bg-[var(--color-surface)] p-7 shadow-[0_14px_40px_rgba(var(--color-text-rgb),0.05)]"
-              >
-                <h3 className="font-body text-[22px] font-medium" style={{ color: 'var(--color-text)' }}>
-                  {step.title}
-                </h3>
-                <p className="font-body text-[15px] leading-relaxed mt-4" style={{ color: 'rgba(var(--color-text-rgb), 0.72)' }}>
-                  {step.description}
-                </p>
+              <div key={step.title} className="surface-card p-7">
+                <h3 className="font-body text-[22px] font-medium text-[var(--color-text)]">{step.title}</h3>
+                <p className="mt-4 section-copy">{step.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section style={{ background: 'var(--color-surface)', padding: '120px 0' }}>
+      <section className="section-pad-xl bg-[var(--color-surface)]">
         <div className="max-w-[1200px] mx-auto px-5 md:px-10 grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-12 items-start">
           <div data-animate="fade">
-            <p className="font-body text-[14px] uppercase tracking-[2px]" style={{ color: 'rgba(var(--color-text-rgb), 0.5)' }}>
-              Contact
-            </p>
-            <h2 className="font-display text-[32px] md:text-[48px] leading-[1.15] mt-3" style={{ color: 'var(--color-text)' }}>
+            <p className="section-eyebrow">Contact</p>
+            <h2 className="mt-3 font-display text-[32px] md:text-[48px] leading-[1.1] section-title max-w-[11ch]">
               Tell me what you want to create
             </h2>
-            <p className="font-body text-[16px] leading-relaxed mt-6" style={{ color: 'rgba(var(--color-text-rgb), 0.72)' }}>
-              Use the form to send your project details. If you already have a brief, timeline, or reference links,
-              include them here so I can respond with a focused next step.
+            <p className="mt-6 section-copy max-w-[640px]">
+              Use the form to send your project details. If you already have a brief, timeline, or reference links, include them here.
             </p>
           </div>
 
-          <form
-            data-animate="fade"
-            data-delay="0.1"
-            className="rounded-[28px] border border-[var(--color-border)] bg-[var(--color-background)] p-6 md:p-8 shadow-[0_18px_50px_rgba(var(--color-text-rgb),0.06)]"
-            onSubmit={(e) => e.preventDefault()}
-          >
+          <form data-animate="fade" data-delay="0.1" className="surface-card p-6 md:p-8" onSubmit={(e) => e.preventDefault()}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="font-body text-[14px] font-medium block mb-2" style={{ color: 'var(--color-text)' }}>
-                  Name
-                </label>
-                <input
-                  type="text"
-                  className="w-full h-12 px-4 rounded-lg font-body text-[16px] outline-none transition-all duration-200"
-                  style={{
-                    background: 'var(--color-surface)',
-                    border: '1px solid var(--color-border)',
-                    color: 'var(--color-text)',
-                  }}
-                />
+                <label className="mb-2 block font-body text-[14px] font-medium text-[var(--color-text)]">Name</label>
+                <input type="text" className="input-modern" placeholder="Your name" aria-label="Your name" />
               </div>
               <div>
-                <label className="font-body text-[14px] font-medium block mb-2" style={{ color: 'var(--color-text)' }}>
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className="w-full h-12 px-4 rounded-lg font-body text-[16px] outline-none transition-all duration-200"
-                  style={{
-                    background: 'var(--color-surface)',
-                    border: '1px solid var(--color-border)',
-                    color: 'var(--color-text)',
-                  }}
-                />
+                <label className="mb-2 block font-body text-[14px] font-medium text-[var(--color-text)]">Email</label>
+                <input type="email" className="input-modern" placeholder="you@example.com" aria-label="Your email" />
               </div>
             </div>
 
             <div className="mt-4">
-              <label className="font-body text-[14px] font-medium block mb-2" style={{ color: 'var(--color-text)' }}>
-                Project type
-              </label>
-              <input
-                type="text"
-                placeholder="Website, dashboard, redesign, or custom app"
-                className="w-full h-12 px-4 rounded-lg font-body text-[16px] outline-none transition-all duration-200"
-                style={{
-                  background: 'var(--color-surface)',
-                  border: '1px solid var(--color-border)',
-                  color: 'var(--color-text)',
-                }}
-              />
+              <label className="mb-2 block font-body text-[14px] font-medium text-[var(--color-text)]">Project type</label>
+              <input type="text" placeholder="Website, dashboard, redesign, or custom app" className="input-modern" />
             </div>
 
             <div className="mt-4">
-              <label className="font-body text-[14px] font-medium block mb-2" style={{ color: 'var(--color-text)' }}>
-                Project details
-              </label>
-              <textarea
-                rows={6}
-                placeholder="Share your goals, timeline, and any useful links or notes."
-                className="w-full px-4 py-3 rounded-lg font-body text-[16px] outline-none resize-y transition-all duration-200"
-                style={{
-                  background: 'var(--color-surface)',
-                  border: '1px solid var(--color-border)',
-                  color: 'var(--color-text)',
-                }}
-              />
+              <label className="mb-2 block font-body text-[14px] font-medium text-[var(--color-text)]">Project details</label>
+              <textarea rows={6} placeholder="Share your goals, timeline, and any useful links or notes." className="textarea-modern" />
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 mt-6">
-              <button
-                type="submit"
-                className="font-body text-[16px] font-medium px-10 py-4 rounded-full transition-colors duration-200"
-                style={{ background: 'var(--color-accent)', color: 'var(--color-background)' }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--color-accent-600)')}
-                onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--color-accent)')}
-              >
+            <div className="mt-6 flex flex-col sm:flex-row gap-4">
+              <button type="submit" className="btn-primary font-body text-[16px] font-medium px-10 py-4">
                 Send Project Brief
               </button>
-              <a
-                href="mailto:abdallahmohammedelmhady@gmail.com"
-                className="font-body text-[16px] font-medium px-10 py-4 rounded-full border-[1.5px] transition-all duration-200 text-center"
-                style={{ borderColor: 'var(--color-border)', color: 'var(--color-text)' }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'var(--color-text)'
-                  e.currentTarget.style.color = 'var(--color-background)'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'transparent'
-                  e.currentTarget.style.color = 'var(--color-text)'
-                }}
-              >
+              <a href="mailto:abdallahmohammedelmhady@gmail.com" className="btn-secondary font-body text-[16px] font-medium px-10 py-4 inline-flex justify-center">
                 Email Me Directly
               </a>
             </div>

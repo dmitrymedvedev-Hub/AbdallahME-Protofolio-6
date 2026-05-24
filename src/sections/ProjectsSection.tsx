@@ -29,31 +29,13 @@ const projects = [
 
 function ProjectsSection() {
   return (
-    <section
-      id="projects"
-      className="relative"
-      style={{
-        background: 'var(--color-background)',
-        zIndex: 1,
-        padding: '120px 0',
-      }}
-    >
+    <section id="projects" className="relative z-10 section-pad-xl bg-[var(--color-background)]">
       <div className="max-w-[1200px] mx-auto px-5 md:px-10">
         <div data-animate="header">
-          <h2
-            className="font-display text-[32px] md:text-[48px]"
-            style={{ color: 'var(--color-text)' }}
-          >
+          <h2 className="font-display text-[32px] md:text-[48px] section-title">
             Selected Work
           </h2>
-          <div
-            className="mt-3"
-            style={{
-              width: '80px',
-              height: '3px',
-              background: 'var(--color-accent)',
-            }}
-          />
+          <div className="mt-3 accent-rule" />
         </div>
 
         <div className="mt-16 flex flex-col gap-20" data-animate="stagger">
@@ -66,42 +48,26 @@ function ProjectsSection() {
                   isReversed ? 'md:grid-cols-[45%_55%]' : ''
                 }`}
               >
-                <div
-                  className={`overflow-hidden rounded-xl ${
-                    isReversed ? 'md:order-2' : ''
-                  }`}
-                  style={{ maxHeight: '320px' }}
-                >
+                <div className={`overflow-hidden rounded-[24px] ${isReversed ? 'md:order-2' : ''}`}>
                   <img
                     src={project.image}
                     alt={project.title}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-400 hover:scale-105"
-                    style={{ display: 'block' }}
+                    className="block h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
                 <div className={isReversed ? 'md:order-1' : ''}>
-                  <h3
-                    className="font-body text-[24px] font-medium mt-2"
-                    style={{ color: 'var(--color-text)' }}
-                  >
+                  <h3 className="font-body text-[24px] font-medium mt-2 text-[var(--color-text)]">
                     {project.title}
                   </h3>
-                  <p
-                    className="font-body text-[16px] mt-3 leading-relaxed"
-                    style={{ color: 'rgba(var(--color-text-rgb), 0.7)' }}
-                  >
+                  <p className="font-body text-[16px] mt-3 leading-relaxed section-copy">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mt-4">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="font-body text-[13px] px-4 py-1.5 rounded-full border border-transparent transition-all duration-200 hover:border-[var(--color-accent)]"
-                        style={{
-                          background: 'var(--color-ghost)',
-                          color: 'var(--color-text)',
-                        }}
+                        className="font-body text-[13px] px-4 py-1.5 rounded-full border border-transparent bg-[var(--color-ghost)] text-[var(--color-text)] transition-all duration-200 hover:border-[var(--color-accent)]"
                       >
                         {tag}
                       </span>
@@ -109,8 +75,7 @@ function ProjectsSection() {
                   </div>
                   <Link
                     to={`/work#${project.id}`}
-                    className="inline-flex items-center gap-1 font-body text-[15px] font-medium mt-5 transition-all duration-200 group"
-                    style={{ color: 'var(--color-accent)' }}
+                    className="inline-flex items-center gap-1 font-body text-[15px] font-medium mt-5 transition-colors duration-200 group text-[var(--color-accent)] hover:text-[var(--color-accent-600)]"
                   >
                     View Details
                     <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">

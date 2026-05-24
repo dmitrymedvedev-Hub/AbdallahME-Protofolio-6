@@ -27,30 +27,13 @@ const skillGroups = [
 
 function SkillsSection() {
   return (
-    <section
-      className="relative"
-      style={{
-        background: 'var(--color-text)',
-        zIndex: 1,
-        padding: '120px 0',
-      }}
-    >
+    <section className="relative z-10 section-pad-xl bg-[var(--color-text)]">
       <div className="max-w-[1200px] mx-auto px-5 md:px-10">
         <div data-animate="header">
-            <h2
-              className="font-display text-[32px] md:text-[48px]"
-              style={{ color: 'var(--color-background)' }}
-            >
+          <h2 className="font-display text-[32px] md:text-[48px] section-title section-title-dark">
               Skills & Expertise
-            </h2>
-          <div
-            className="mt-3"
-            style={{
-              width: '80px',
-              height: '3px',
-              background: 'var(--color-accent)',
-            }}
-          />
+          </h2>
+          <div className="mt-3 accent-rule" />
         </div>
 
         <div
@@ -60,25 +43,12 @@ function SkillsSection() {
           {skillGroups.map((group) => (
             <div key={group.label}>
               <div className="flex items-center gap-3">
-                <div
-                  className="rounded-full"
-                  style={{
-                    width: '8px',
-                    height: '8px',
-                    background: 'var(--color-accent)',
-                  }}
-                />
-                <span
-                  className="font-body text-[14px] tracking-[2px]"
-                  style={{ color: 'rgba(var(--color-background-rgb, 246 241 238), 0.5)' }}
-                >
+                <div className="h-2 w-2 rounded-full bg-[var(--color-accent)]" />
+                <span className="font-body text-[14px] tracking-[2px] text-[rgba(var(--color-background-rgb),0.56)]">
                   {group.label}
                 </span>
               </div>
-              <p
-                className="font-body text-[18px] mt-2 ml-[20px]"
-                style={{ color: 'var(--color-background)' }}
-              >
+              <p className="font-body text-[18px] mt-2 ml-[20px] text-[var(--color-background)]/92">
                 {group.skills}
               </p>
             </div>

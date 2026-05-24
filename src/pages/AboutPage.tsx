@@ -5,42 +5,42 @@ import useScrollAnimation from '../hooks/useScrollAnimation'
 const values = [
   {
     number: '01',
-    title: 'Readable, Maintainable Code',
+    title: 'Readable systems',
     description:
-      'I deliver code that is well-structured, documented, and easy to iterate on — reducing friction for teams and speeding development.',
+      'I structure code and UI so the product is easier to maintain, extend, and understand as it grows.',
   },
   {
     number: '02',
-    title: 'User-Centered Outcomes',
+    title: 'Practical delivery',
     description:
-      'Product decisions prioritize accessibility, performance, and usability to create measurable value for end users.',
+      'I focus on the right amount of polish, the right features, and the right pace for sustainable progress.',
   },
   {
     number: '03',
-    title: 'Continuous Improvement',
+    title: 'Modern execution',
     description:
-      'I adopt modern workflows, testing, and observability to ensure systems remain reliable and easy to evolve.',
+      'I use current frontend patterns, responsive layouts, and thoughtful interactions to keep the work current.',
   },
 ]
 
 const timelineItems = [
   {
-    year: '2020 — Present',
-    role: 'Full-Stack Developer — Freelance',
+    year: 'Now',
+    role: 'Full-stack delivery',
     description:
-      'Delivered full-stack web applications, handling architecture, implementation, and deployment for client projects.',
+      'Building polished product experiences end to end with attention to quality, speed, and clarity.',
   },
   {
-    year: '2018 — 2020',
-    role: 'Frontend Developer — TechStart Agency',
+    year: 'Before',
+    role: 'Frontend craftsmanship',
     description:
-      'Built responsive interfaces for e-commerce and SaaS products, working closely with designers to implement polished UIs.',
+      'Turning design direction into responsive interfaces that feel consistent and intentional.',
   },
   {
-    year: '2016 — 2018',
-    role: 'Junior Developer — Digital Solutions Co.',
+    year: 'Always',
+    role: 'Continuous improvement',
     description:
-      'Began as a frontend developer, learning core web fundamentals and progressing into full-stack responsibilities.',
+      'Refining code, UX, and workflow with each project so the next release is easier to ship.',
   },
 ]
 
@@ -49,212 +49,77 @@ function AboutPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section
-        style={{
-          background: 'var(--color-background)',
-          paddingTop: '160px',
-          paddingBottom: '80px',
-        }}
-      >
-          <div className="max-w-[1200px] mx-auto px-5 md:px-10">
-            <p
-              data-animate="fade"
-              className="font-accent text-[24px] md:text-[32px]"
-              style={{ color: 'var(--color-accent)' }}
-            >
-              Get to know me
-            </p>
-            <h1
-              data-animate="fade"
-              data-delay="0.15"
-              className="font-display text-[40px] md:text-[64px] leading-[1.1] mt-2"
-              style={{ color: 'var(--color-text)' }}
-            >
+      <section className="page-shell section-pad-hero">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-10 grid grid-cols-1 lg:grid-cols-[1fr_0.85fr] gap-10 lg:items-end">
+          <div data-animate="fade" className="max-w-[760px]">
+            <p className="font-accent text-[18px] md:text-[24px] text-[var(--color-accent)]">Get to know me</p>
+            <h1 className="font-display text-[42px] md:text-[74px] leading-[0.95] mt-4 section-title">
               About Me
             </h1>
-            <p
-              data-animate="fade"
-              data-delay="0.3"
-              className="font-body text-[16px] md:text-[18px] mt-4 max-w-[560px]"
-              style={{ color: 'rgba(var(--color-text-rgb), 0.7)' }}
-            >
-              I build dependable web applications with a focus on usability,
-              performance, and long-term maintainability.
+            <p className="font-body text-[17px] md:text-[19px] mt-6 max-w-[680px] section-copy">
+              I build dependable web applications with a focus on usability, performance, and long-term maintainability.
+              The goal is always the same: create work that feels modern, works smoothly, and stays clear for the next person.
             </p>
-        </div>
-      </section>
+          </div>
 
-      {/* My Story */}
-      <section
-        style={{
-          background: 'var(--color-surface)',
-          padding: '120px 0',
-        }}
-      >
-          <div className="max-w-[1200px] mx-auto px-5 md:px-10">
-            <div className="grid grid-cols-1 md:grid-cols-[55%_45%] gap-16 items-center">
-              <div>
-                <span
-                  data-animate="fade"
-                  className="font-body text-[14px] font-medium tracking-[2px] uppercase"
-                  style={{ color: 'rgba(var(--color-text-rgb), 0.5)' }}
-                >
-                  My Journey
-                </span>
-                <h2
-                  data-animate="fade"
-                  data-delay="0.1"
-                  className="font-display text-[28px] md:text-[36px] leading-[1.3] mt-3"
-                  style={{ color: 'var(--color-text)' }}
-                >
-                    A practical approach to building web products
-                </h2>
-                <p
-                  data-animate="fade"
-                  data-delay="0.2"
-                  className="font-body text-[16px] leading-relaxed mt-5"
-                  style={{ color: 'rgba(var(--color-text-rgb), 0.7)' }}
-                >
-                  I started as a curious tinkerer and grew into a developer who values
-                  clarity, reliability, and measurable results. My work focuses on
-                  delivering features that solve real problems and scale with the business.
-                </p>
-                <p
-                  data-animate="fade"
-                  data-delay="0.3"
-                  className="font-body text-[16px] leading-relaxed mt-4"
-                  style={{ color: 'rgba(var(--color-text-rgb), 0.7)' }}
-                >
-                  Over the years I have partnered with startups and product teams to
-                  design and ship customer-facing applications, internal tools, and APIs.
-                  I bring pragmatic engineering, attention to UX, and a commitment to
-                  long-term maintainability.
-                </p>
-                <p
-                  data-animate="fade"
-                  data-delay="0.4"
-                  className="font-body text-[16px] leading-relaxed mt-4"
-                  style={{ color: 'rgba(var(--color-text-rgb), 0.7)' }}
-                >
-                  Outside of work I contribute to open-source projects and keep up with
-                  emerging best practices in performance, accessibility, and tooling.
-                </p>
-            </div>
-            <div data-animate="slide-right" data-delay="0.2">
-                  <img
-                    src="/images/imageTow.png"
-                    alt="Abdallah Elmhady professional portrait"
-                    loading="lazy"
-                    className="w-full max-w-[400px] mx-auto rounded-xl object-cover"
-                    style={{
-                      height: '520px',
-                      boxShadow: '0 8px 32px rgba(var(--color-text-rgb), 0.08)',
-                    }}
-                  />
+          <div data-animate="fade" data-delay="0.15" className="lg:justify-self-end">
+            <div className="surface-card overflow-hidden p-3 max-w-[440px]">
+              <img
+                src="/images/imageTow.png"
+                alt="Abdallah Elmhady professional portrait"
+                loading="lazy"
+                className="h-[520px] w-full rounded-[22px] object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section
-        style={{
-          background: 'var(--color-background)',
-          padding: '120px 0',
-        }}
-      >
-          <div className="max-w-[1200px] mx-auto px-5 md:px-10">
-            <div data-animate="header">
-              <h2
-                className="font-display text-[32px] md:text-[48px]"
-                style={{ color: 'var(--color-text)' }}
-              >
-                What I Value
-              </h2>
-            <div
-              className="mt-3"
-              style={{
-                width: '80px',
-                height: '3px',
-                background: 'var(--color-accent)',
-              }}
-            />
+      <section className="section-pad-xl bg-[var(--color-surface)]">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-10 grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-10 lg:gap-14 items-start">
+          <div data-animate="fade" className="max-w-[560px]">
+            <p className="section-eyebrow">My Journey</p>
+            <h2 className="mt-3 max-w-[12ch] font-display text-[32px] md:text-[48px] leading-[1.1] section-title">
+              A practical approach to building web products
+            </h2>
+            <p className="mt-5 section-copy">
+              I started as a curious builder and grew into a developer who values clarity, reliability, and measurable results.
+              My work focuses on delivering features that solve real problems and scale with the business.
+            </p>
+            <p className="mt-4 section-copy">
+              I partner well with teams that want a clean product layer, a dependable implementation, and a professional finish.
+            </p>
           </div>
 
-          <div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16"
-            data-animate="stagger"
-          >
-              {values.map((value) => (
-                <div
-                  key={value.number}
-                  className="rounded-xl p-9"
-                  style={{
-                    background: 'var(--color-surface)',
-                  }}
-                >
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center"
-                    style={{ background: 'rgba(var(--color-accent-rgb), 0.08)' }}
-                  >
-                    <span
-                      className="font-body text-[16px] font-medium"
-                      style={{ color: 'var(--color-accent)' }}
-                    >
-                      {value.number}
-                    </span>
+          <div className="grid gap-4" data-animate="stagger">
+            {values.map((value) => (
+              <div key={value.number} className="surface-card p-6 md:p-7">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(var(--color-accent-rgb),0.12)] text-[var(--color-accent)] font-body text-[16px] font-medium">
+                    {value.number}
                   </div>
-                  <h3
-                    className="font-body text-[22px] font-medium mt-5"
-                    style={{ color: 'var(--color-text)' }}
-                  >
-                    {value.title}
-                  </h3>
-                  <p
-                    className="font-body text-[15px] leading-relaxed mt-3"
-                    style={{ color: 'rgba(var(--color-text-rgb), 0.7)' }}
-                  >
-                    {value.description}
-                  </p>
+                  <h3 className="font-body text-[22px] font-medium text-[var(--color-text)]">{value.title}</h3>
                 </div>
-              ))}
+                <p className="mt-4 section-copy">{value.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Experience Timeline */}
-      <section
-        style={{
-          background: 'var(--color-text)',
-          padding: '120px 0',
-        }}
-      >
+      <section className="section-pad-xl page-shell-dark">
         <div className="max-w-[1200px] mx-auto px-5 md:px-10">
           <div data-animate="header">
-            <h2
-              className="font-display text-[32px] md:text-[48px]"
-              style={{ color: 'var(--color-background)' }}
-            >
+            <p className="section-eyebrow section-eyebrow-dark">Experience</p>
+            <h2 className="mt-3 font-display text-[32px] md:text-[48px] section-title section-title-dark">
               My Experience
             </h2>
-            <div
-              className="mt-3"
-              style={{
-                width: '80px',
-                height: '3px',
-                background: 'var(--color-accent)',
-              }}
-            />
+            <div className="mt-3 accent-rule" />
           </div>
 
-          <div className="relative mt-16 max-w-[800px] mx-auto">
-            <div
-              className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5"
-              style={{ background: 'var(--color-accent)' }}
-            />
-
-            <div className="flex flex-col gap-16">
+          <div className="relative mt-16 max-w-[900px] mx-auto">
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-[rgba(var(--color-background-rgb),0.16)]" />
+            <div className="grid gap-8">
               {timelineItems.map((item, index) => {
                 const isLeft = index % 2 === 0
 
@@ -263,36 +128,12 @@ function AboutPage() {
                     key={item.year}
                     data-animate="fade"
                     data-delay={`${index * 0.15}`}
-                    className={`relative pl-12 md:pl-0 ${
-                      isLeft ? 'md:pr-[52%] md:text-right' : 'md:pl-[52%] md:text-left'
-                    }`}
+                    className={`relative pl-12 md:pl-0 ${isLeft ? 'md:pr-[52%] md:text-right' : 'md:pl-[52%]'}`}
                   >
-                    <div
-                      className="absolute top-1 w-3 h-3 rounded-full"
-                      style={{
-                        background: 'var(--color-accent)',
-                        left: '12px',
-                        transform: 'translateX(-50%)',
-                      }}
-                    />
-                    <span
-                      className="font-body text-[14px] font-medium tracking-[1px]"
-                      style={{ color: 'var(--color-accent)' }}
-                    >
-                      {item.year}
-                    </span>
-                    <h3
-                      className="font-body text-[20px] font-medium mt-2"
-                      style={{ color: 'var(--color-background)' }}
-                    >
-                      {item.role}
-                    </h3>
-                    <p
-                      className="font-body text-[15px] leading-relaxed mt-3"
-                      style={{ color: 'rgba(var(--color-background-rgb), 0.7)' }}
-                    >
-                      {item.description}
-                    </p>
+                    <div className="absolute top-2 left-[12px] h-3 w-3 -translate-x-1/2 rounded-full bg-[var(--color-accent)]" />
+                    <p className="font-body text-[14px] font-medium tracking-[1px] text-[var(--color-accent)]">{item.year}</p>
+                    <h3 className="mt-2 font-body text-[20px] font-medium text-[var(--color-background)]">{item.role}</h3>
+                    <p className="mt-3 section-copy-dark">{item.description}</p>
                   </div>
                 )
               })}
@@ -301,63 +142,19 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section
-        style={{
-          background: 'var(--color-background)',
-          padding: '100px 0',
-        }}
-      >
+      <section className="section-pad-xl bg-[var(--color-background)]">
         <div className="max-w-[1200px] mx-auto px-5 md:px-10 text-center">
-          <h2
-            data-animate="header"
-            className="font-display text-[28px] md:text-[40px] leading-[1.3]"
-            style={{ color: 'var(--color-text)' }}
-          >
-            Ready to collaborate? Let's talk.
+          <h2 data-animate="header" className="font-display text-[30px] md:text-[42px] section-title">
+            Ready to collaborate? Let&apos;s talk.
           </h2>
-          <p
-            data-animate="fade"
-            data-delay="0.1"
-            className="font-body text-[16px] mt-3"
-            style={{ color: 'rgba(var(--color-text-rgb), 0.7)' }}
-          >
-            Have a project in mind? I'd love to hear about it.
+          <p data-animate="fade" data-delay="0.1" className="mt-4 section-copy max-w-[720px] mx-auto">
+            Have a project in mind? I&apos;d love to hear about it and help shape a modern, professional result.
           </p>
-          <div
-            data-animate="fade"
-            data-delay="0.2"
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
-          >
-            <Link
-              to="/#contact"
-              className="font-body text-[16px] font-medium px-10 py-4 rounded-full transition-colors duration-200"
-              style={{
-                background: 'var(--color-accent)',
-                color: 'var(--color-background)',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--color-accent-600)')}
-              onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--color-accent)')}
-            >
+          <div data-animate="fade" data-delay="0.2" className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link to="/start-project" className="btn-primary font-body text-[16px] font-medium px-10 py-4">
               Get in Touch
             </Link>
-            <Link
-              to="/work"
-              className="font-body text-[16px] font-medium px-10 py-4 rounded-full border-[1.5px] transition-all duration-200"
-              style={{
-                background: 'transparent',
-                borderColor: 'var(--color-text)',
-                color: 'var(--color-text)',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'var(--color-text)'
-                e.currentTarget.style.color = 'var(--color-background)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'transparent'
-                e.currentTarget.style.color = 'var(--color-text)'
-              }}
-            >
+            <Link to="/work" className="btn-secondary font-body text-[16px] font-medium px-10 py-4">
               View My Work
             </Link>
           </div>
