@@ -7,6 +7,7 @@ function Navigation() {
   const location = useLocation()
   const navigate = useNavigate()
   const isHome = location.pathname === '/'
+  const isStartProject = location.pathname === '/start-project'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,6 +61,18 @@ function Navigation() {
           'bg-[linear-gradient(180deg,rgba(var(--color-text-rgb),0.98),rgba(var(--color-text-rgb),0.92))] text-[var(--color-background)] border-l border-white/10',
         mobileLink: 'text-[var(--color-background)]/75 hover:text-[var(--color-background)]',
       }
+    : isStartProject
+      ? {
+          shell: 'bg-[var(--color-text)]/78 backdrop-blur-xl border-b border-white/10 shadow-[0_12px_40px rgba(0,0,0,0.22)]',
+          brand: 'text-[var(--color-background)]',
+          link: 'text-[var(--color-background)]/72 hover:text-[var(--color-background)]',
+          activeLink: 'text-[var(--color-background)]',
+          icon: 'bg-[var(--color-background)]',
+          mobileOverlay: 'bg-black/45 backdrop-blur-[1px]',
+          mobilePanel:
+            'bg-[linear-gradient(180deg,rgba(var(--color-text-rgb),0.98),rgba(var(--color-text-rgb),0.92))] text-[var(--color-background)] border-l border-white/10',
+          mobileLink: 'text-[var(--color-background)]/75 hover:text-[var(--color-background)]',
+        }
     : {
         shell: 'bg-[var(--color-background)]/92 backdrop-blur-xl border-b border-[var(--color-border)] shadow-[0_12px_40px_rgba(var(--color-text-rgb),0.06)]',
         brand: 'text-[var(--color-text)]',

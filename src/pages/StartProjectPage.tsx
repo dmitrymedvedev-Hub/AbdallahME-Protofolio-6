@@ -47,10 +47,10 @@ function StartProjectPage() {
 
           <div data-animate="stagger" className="grid gap-4">
             <div className="rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8 backdrop-blur-sm shadow-[0_18px_50px_rgba(0,0,0,0.18)]">
-              <p className="section-eyebrow section-eyebrow-dark">Best for</p>
+              <p className="font-body text-[14px] font-semibold uppercase tracking-[2px] text-[var(--color-text)]">Best for</p>
               <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {services.map((item) => (
-                  <li key={item} className="surface-card-soft px-4 py-3 text-[var(--color-background)]">
+                  <li key={item} className="surface-card-soft px-4 py-3 text-[var(--color-text)]">
                     {item}
                   </li>
                 ))}
@@ -58,10 +58,10 @@ function StartProjectPage() {
             </div>
 
             <div className="rounded-[28px] border border-white/10 bg-[rgba(var(--color-accent-rgb),0.12)] p-6 md:p-8 backdrop-blur-sm">
-              <p className="section-eyebrow section-eyebrow-dark">What you get</p>
+              <p className="font-body text-[14px] font-semibold uppercase tracking-[2px] text-[var(--color-text)]">What you get</p>
               <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {qualities.map((item) => (
-                  <li key={item} className="surface-card-soft px-4 py-3 text-[var(--color-background)]">
+                  <li key={item} className="surface-card-soft px-4 py-3 text-[var(--color-text)]">
                     {item}
                   </li>
                 ))}
