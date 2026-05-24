@@ -43,30 +43,32 @@ function Navigation() {
 
   const mobileItems = navLinks.map((link, index) => ({
     ...link,
-    delayClass: ['delay-[120ms]', 'delay-[190ms]', 'delay-[260ms]'][index] || 'delay-0',
+    delayClass: ['delay-[120ms]', 'delay-[190ms]', 'delay-[260ms]', 'delay-[330ms]'][index] || 'delay-0',
   }))
 
-    const themeClasses = isHome
+  const themeClasses = isHome
     ? {
         shell: scrolled
-          ? 'bg-[var(--color-text)]/75 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/20'
+          ? 'bg-[var(--color-text)]/78 backdrop-blur-xl border-b border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.22)]'
           : 'bg-transparent border-b border-transparent',
         brand: 'text-[var(--color-background)]',
         link: 'text-[var(--color-background)]/70 hover:text-[var(--color-background)]',
         activeLink: 'text-[var(--color-background)]',
         icon: 'bg-[var(--color-background)]',
-        mobileOverlay: 'bg-black/35',
-        mobilePanel: 'bg-[var(--color-text)]/95 text-[var(--color-background)] border-l border-white/10',
+        mobileOverlay: 'bg-black/45 backdrop-blur-[1px]',
+        mobilePanel:
+          'bg-[linear-gradient(180deg,rgba(var(--color-text-rgb),0.98),rgba(var(--color-text-rgb),0.92))] text-[var(--color-background)] border-l border-white/10',
         mobileLink: 'text-[var(--color-background)]/75 hover:text-[var(--color-background)]',
       }
     : {
-        shell: 'bg-[var(--color-background)]/90 backdrop-blur-xl border-b border-[var(--color-border)] shadow-lg shadow-[var(--color-text)]/5',
+        shell: 'bg-[var(--color-background)]/92 backdrop-blur-xl border-b border-[var(--color-border)] shadow-[0_12px_40px_rgba(var(--color-text-rgb),0.06)]',
         brand: 'text-[var(--color-text)]',
         link: 'text-[var(--color-text)]/70 hover:text-[var(--color-accent)]',
         activeLink: 'text-[var(--color-text)]',
         icon: 'bg-[var(--color-text)]',
-        mobileOverlay: 'bg-[var(--color-text)]/20',
-        mobilePanel: 'bg-[var(--color-background)] text-[var(--color-text)] border-l border-[var(--color-border)]',
+        mobileOverlay: 'bg-[var(--color-text)]/24 backdrop-blur-[1px]',
+        mobilePanel:
+          'bg-[linear-gradient(180deg,var(--color-background),rgba(var(--color-background-rgb),0.98))] text-[var(--color-text)] border-l border-[var(--color-border)]',
         mobileLink: 'text-[var(--color-text)]/70 hover:text-[var(--color-accent)]',
       }
 
@@ -160,7 +162,7 @@ function Navigation() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed inset-x-0 top-16 bottom-0 z-40 transition-all duration-300 ${
+        className={`md:hidden fixed inset-0 z-[60] transition-all duration-300 ${
           mobileOpen ? 'pointer-events-auto' : 'pointer-events-none'
         }`}
       >
@@ -173,19 +175,35 @@ function Navigation() {
           onClick={() => setMobileOpen(false)}
         />
         <div
-          className={`absolute right-0 top-0 h-full w-[min(86vw,320px)] border-l p-6 sm:p-8 shadow-2xl backdrop-blur-2xl transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${themeClasses.mobilePanel} ${
-            mobileOpen ? 'translate-x-0 opacity-100' : 'translate-x-[102%] opacity-0'
+          className={`absolute right-0 top-0 h-full w-[min(88vw,360px)] border-l p-5 sm:p-7 shadow-[0_32px_80px_rgba(0,0,0,0.3)] backdrop-blur-2xl transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${themeClasses.mobilePanel} ${
+            mobileOpen ? 'translate-x-0 opacity-100' : 'translate-x-[105%] opacity-0'
           }`}
         >
-          <div className="mb-8 h-px w-12 rounded-full bg-[var(--color-accent)]/70" />
-          <div className="flex flex-col gap-2">
+          <div className="flex items-center justify-between gap-4 pb-5">
+            <div>
+              <p className="font-body text-[12px] uppercase tracking-[2px] text-current/50">Navigation</p>
+              <h2 className="mt-1 font-display text-[22px] leading-none">Menu</h2>
+            </div>
+            <button
+              type="button"
+              className="rounded-full border border-current/10 bg-current/5 px-3 py-2 text-[13px] font-medium text-current/75 transition-colors hover:bg-current/10 hover:text-current"
+              onClick={() => setMobileOpen(false)}
+              aria-label="Close sidebar"
+            >
+              Close
+            </button>
+          </div>
+
+          <div className="h-px w-full bg-current/10" />
+
+          <div className="mt-5 flex flex-col gap-2">
             {mobileItems.map((link) =>
               link.type === 'route' ? (
                 <Link
                   key={link.label}
                   to={link.path}
                   onClick={() => setMobileOpen(false)}
-                  className={`group relative overflow-hidden rounded-2xl px-4 py-3 font-body text-[18px] transition-all duration-500 ease-out ${link.delayClass} ${
+                  className={`group relative overflow-hidden rounded-2xl border border-transparent px-4 py-3 font-body text-[17px] transition-all duration-500 ease-out ${link.delayClass} ${
                     location.pathname === link.path
                       ? 'translate-x-0 opacity-100'
                       : mobileOpen
@@ -193,11 +211,14 @@ function Navigation() {
                         : 'translate-x-6 opacity-0'
                   } ${
                     location.pathname === link.path
-                      ? themeClasses.activeLink
+                      ? `${themeClasses.activeLink} bg-current/10 border-current/10`
                       : themeClasses.mobileLink
                   }`}
                 >
-                  <span className="relative z-10">{link.label}</span>
+                  <span className="relative z-10 flex items-center justify-between">
+                    <span>{link.label}</span>
+                    <span className="text-[12px] uppercase tracking-[2px] text-current/35">{link.label === 'Home' ? '01' : link.label === 'Work' ? '02' : link.label === 'About' ? '03' : '04'}</span>
+                  </span>
                   <span className="absolute inset-0 rounded-2xl bg-current/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </Link>
               ) : (
@@ -208,15 +229,24 @@ function Navigation() {
                     goToSection(link.id)
                     setMobileOpen(false)
                   }}
-                  className={`group relative overflow-hidden rounded-2xl border-none bg-transparent px-4 py-3 text-left font-body text-[18px] transition-all duration-500 ease-out ${link.delayClass} ${
+                  className={`group relative overflow-hidden rounded-2xl border border-transparent bg-transparent px-4 py-3 text-left font-body text-[17px] transition-all duration-500 ease-out ${link.delayClass} ${
                     mobileOpen ? 'translate-x-0 opacity-100' : 'translate-x-6 opacity-0'
                   } ${themeClasses.mobileLink}`}
                 >
-                  <span className="relative z-10">{link.label}</span>
+                  <span className="relative z-10 flex items-center justify-between">
+                    <span>{link.label}</span>
+                    <span className="text-[12px] uppercase tracking-[2px] text-current/35">05</span>
+                  </span>
                   <span className="absolute inset-0 rounded-2xl bg-current/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </button>
               )
             )}
+          </div>
+
+          <div className="mt-6 rounded-3xl border border-current/10 bg-current/5 p-4 text-current/70">
+            <p className="text-[13px] leading-relaxed">
+              A clean, focused sidebar built to keep navigation simple, readable, and consistent on every screen.
+            </p>
           </div>
         </div>
       </div>
