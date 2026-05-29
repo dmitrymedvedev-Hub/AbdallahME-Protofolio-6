@@ -27,9 +27,7 @@ import {
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
-const SIDEBAR_WIDTH = "16rem"
 const SIDEBAR_WIDTH_MOBILE = "18rem"
-const SIDEBAR_WIDTH_ICON = "3rem"
 const SIDEBAR_KEYBOARD_SHORTCUT = "b"
 
 type SidebarContextProps = {
@@ -160,10 +158,10 @@ function Sidebar({
 
   if (collapsible === "none") {
     return (
-      <div
+        <div
         data-slot="sidebar"
         className={cn(
-          "bg-sidebar text-sidebar-foreground flex h-full w-(--sidebar-width) flex-col",
+          "bg-[var(--color-sidebar-bg)] text-[var(--color-sidebar-text)] flex h-full w-[var(--sidebar-width)] flex-col surface-card-dark p-4",
           className
         )}
         {...props}
@@ -180,7 +178,7 @@ function Sidebar({
           data-sidebar="sidebar"
           data-slot="sidebar"
           data-mobile="true"
-          className="bg-sidebar text-sidebar-foreground w-(--sidebar-width) p-0 [&>button]:hidden"
+          className="bg-[var(--color-sidebar-bg)] text-[var(--color-sidebar-text)] w-[var(--sidebar-width)] p-0 [&>button]:hidden surface-card-dark"
           style={
             {
               "--sidebar-width": SIDEBAR_WIDTH_MOBILE,

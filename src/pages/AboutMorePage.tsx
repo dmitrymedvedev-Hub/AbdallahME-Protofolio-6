@@ -2,25 +2,7 @@ import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import useScrollAnimation from '../hooks/useScrollAnimation'
 
-const highlights = [
-  {
-    title: 'Production-first mindset',
-    description:
-      'I focus on reliability, clarity, and maintainability so the work stays useful after launch.',
-  },
-  {
-    title: 'Product thinking',
-    description:
-      'I shape features around real user needs, business value, and simple paths to completion.',
-  },
-  {
-    title: 'Modern execution',
-    description:
-      'I build with current frontend patterns, clean component boundaries, and strong visual polish.',
-  },
-]
-
-const stats = []
+// highlights and stats intentionally removed — simplified content for modern layout
 
 const journey = [
   {
@@ -56,10 +38,7 @@ function AboutMorePage() {
             <p className="font-accent text-[18px] md:text-[24px] text-[var(--color-accent)]">
               More About Me
             </p>
-            <h1
-              className="font-display text-[42px] md:text-[72px] leading-[1.05] mt-3"
-              className="font-display text-[42px] md:text-[72px] leading-[1.05] mt-3 text-[var(--color-background)]"
-            >
+            <h1 className="font-display text-[42px] md:text-[72px] leading-[1.05] mt-3 text-[var(--color-background)]">
               Clear thinking. Calm execution. Strong outcomes.
             </h1>
             <p className="font-body text-[17px] md:text-[19px] leading-relaxed mt-5 max-w-[680px] text-[rgba(var(--color-background-rgb),0.72)]">

@@ -31,11 +31,19 @@ function Navigation() {
     }
   }, [isHome, location.hash])
 
-  const goToSection = (id: string) => {
+  const goToSection = (id?: string) => {
+    if (!id) return
     navigate(`/#${id}`)
   }
 
-  const navLinks = [
+  type NavLink = {
+    label: string
+    path: string
+    type: 'route'
+    id?: string
+  }
+
+  const navLinks: NavLink[] = [
     { label: 'Home', path: '/', type: 'route' as const },
     { label: 'Work', path: '/work', type: 'route' as const },
     { label: 'About', path: '/about', type: 'route' as const },
@@ -51,16 +59,16 @@ function Navigation() {
     ? {
         // Dark theme for all main pages
         shell: scrolled
-          ? 'bg-gradient-to-r from-[var(--color-text)]/90 via-[var(--color-text)]/80 to-[var(--color-text)]/90 backdrop-blur-2xl border-b border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]'
-          : 'bg-gradient-to-r from-[var(--color-text)]/60 via-[var(--color-text)]/40 to-[var(--color-text)]/60 backdrop-blur-xl border-b border-white/5',
-        brand: 'text-white font-semibold',
-        link: 'text-white/70 hover:text-white transition-all duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-[var(--color-accent)] after:rounded-full after:transition-all after:duration-300 hover:after:w-full',
-        activeLink: 'text-white font-semibold after:w-full',
-        icon: 'bg-white',
+          ? 'backdrop-blur-xl bg-[rgba(6,10,14,0.75)] border-b border-[rgba(255,255,255,0.06)] shadow-[0_12px_40px_rgba(0,0,0,0.6)]'
+          : 'backdrop-blur-md bg-[rgba(6,10,14,0.5)] border-b border-[rgba(255,255,255,0.04)]',
+        brand: 'text-[var(--color-accent)] font-semibold',
+        link: 'text-[var(--color-sidebar-text)]/90 hover:text-[var(--color-sidebar-text)] transition-all duration-300',
+        activeLink: 'text-[var(--color-sidebar-text)] font-semibold',
+        icon: 'bg-[var(--color-sidebar-text)]',
         mobileOverlay: 'bg-black/60 backdrop-blur-sm',
         mobilePanel:
-          'bg-gradient-to-b from-[var(--color-text)] via-[rgba(var(--color-text-rgb),0.97)] to-[var(--color-text)] text-white border-l border-white/10',
-        mobileLink: 'text-white/75 hover:text-white',
+          'bg-[var(--color-surface)] text-[var(--color-text)] border-l border-[var(--color-border)]',
+        mobileLink: 'text-[var(--color-sidebar-text)]/75 hover:text-[var(--color-accent)]',
       }
     : {
         // Light theme for other pages
@@ -79,7 +87,7 @@ function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${themeClasses.shell}`}
     >
-      <div className="max-w-[1200px] mx-auto px-5 md:px-10 flex items-center justify-between h-16">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-10 grid grid-cols-[auto_1fr_auto] items-center h-16 gap-4">
         <Link
           to="/"
           className={`group flex items-center gap-3 font-body text-[16px] font-medium transition-colors duration-300 ${themeClasses.brand}`}
@@ -97,7 +105,8 @@ function Navigation() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center justify-center">
+          <div className="flex items-center gap-8">
           {navLinks.map((link) => {
             const isActive =
               link.type === 'route'
@@ -113,11 +122,7 @@ function Navigation() {
                 }`}
               >
                 {link.label}
-                <span
-                  className={`absolute left-0 -bottom-2 h-px w-full origin-left rounded-full transition-transform duration-300 ${
-                    isActive ? 'scale-x-100 bg-current' : 'scale-x-0 bg-current group-hover:scale-x-100'
-                  }`}
-                />
+                <span className="absolute left-0 -bottom-2 h-0.5 w-full origin-left rounded-full transition-transform duration-300 bg-[var(--color-accent)]" style={{ transform: isActive ? 'scaleX(1)' : 'scaleX(0)', transformOrigin: 'left' }} />
               </Link>
             ) : (
               <button
@@ -137,30 +142,36 @@ function Navigation() {
               </button>
             )
           })}
+          </div>
         </div>
 
-        {/* Mobile Hamburger */}
-        <button
-          className="group md:hidden flex flex-col gap-1.5 rounded-full border border-current/10 p-2.5 bg-current/5 backdrop-blur-sm cursor-pointer transition-all duration-300 hover:bg-current/10"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          <span
-            className={`block h-0.5 w-6 origin-center rounded-full transition-all duration-300 ease-out ${themeClasses.icon} ${
-              mobileOpen ? 'rotate-45 translate-x-1 translate-y-1' : ''
-            }`}
-          />
-          <span
-            className={`block h-0.5 w-6 origin-center rounded-full transition-all duration-300 ease-out ${themeClasses.icon} ${
-              mobileOpen ? 'scale-x-0 opacity-0' : 'scale-x-100 opacity-100'
-            }`}
-          />
-          <span
-            className={`block h-0.5 w-6 origin-center rounded-full transition-all duration-300 ease-out ${themeClasses.icon} ${
-              mobileOpen ? '-rotate-45 translate-x-1 -translate-y-1' : ''
-            }`}
-          />
-        </button>
+        {/* Right actions: CTA + Mobile Hamburger */}
+        <div className="flex items-center justify-end gap-3">
+          <Link to="/start-project" className="btn-primary px-4 py-2 hidden md:inline-flex items-center">
+            Start a Project
+          </Link>
+          <button
+            className="group md:hidden flex flex-col gap-1.5 rounded-full border border-current/10 p-2.5 bg-current/5 backdrop-blur-sm cursor-pointer transition-all duration-300 hover:bg-current/10"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`block h-0.5 w-6 origin-center rounded-full transition-all duration-300 ease-out ${themeClasses.icon} ${
+                mobileOpen ? 'rotate-45 translate-x-1 translate-y-1' : ''
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-6 origin-center rounded-full transition-all duration-300 ease-out ${themeClasses.icon} ${
+                mobileOpen ? 'scale-x-0 opacity-0' : 'scale-x-100 opacity-100'
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-6 origin-center rounded-full transition-all duration-300 ease-out ${themeClasses.icon} ${
+                mobileOpen ? '-rotate-45 translate-x-1 -translate-y-1' : ''
+              }`}
+            />
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -248,11 +259,7 @@ function Navigation() {
             )}
           </div>
 
-          <div className="mt-6 rounded-3xl border border-current/10 bg-current/5 p-4 text-current/70">
-            <p className="text-[13px] leading-relaxed">
-              A clean, focused sidebar built to keep navigation simple, readable, and consistent on every screen.
-            </p>
-          </div>
+          {/* removed small info card per design: kept menu only for focus */}
         </div>
       </div>
     </nav>

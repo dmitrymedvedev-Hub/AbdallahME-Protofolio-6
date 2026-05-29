@@ -38,8 +38,11 @@ function AsciiSphere() {
 
     // Add a wireframe cage
     const cageGeometry = new THREE.IcosahedronGeometry(18, 4)
+    // derive color from CSS variables so theme tokens control the wireframe color
+    const cssWhite = getComputedStyle(document.documentElement).getPropertyValue('--color-white-rgb') || '255 255 255'
+    const wireColor = `rgb(${cssWhite.trim()})`
     const cageMaterial = new THREE.MeshBasicMaterial({
-      color: '#ffffff',
+      color: new THREE.Color(wireColor),
       wireframe: true,
       transparent: true,
       opacity: 0.55,

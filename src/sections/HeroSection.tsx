@@ -27,7 +27,7 @@ function HeroSection() {
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-24 right-[-5rem] h-72 w-72 rounded-full bg-[var(--color-accent)]/15 blur-3xl" />
         <div className="absolute bottom-0 left-[-4rem] h-80 w-80 rounded-full bg-white/5 blur-3xl" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:56px_56px] opacity-25" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(var(--color-white-rgb),0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(var(--color-white-rgb),0.04)_1px,transparent_1px)] bg-[size:56px_56px] opacity-25" />
       </div>
 
       <div className="relative mx-auto grid max-w-[1200px] grid-cols-1 gap-10 px-5 md:px-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
@@ -67,8 +67,8 @@ function HeroSection() {
         </div>
 
         <div className="hero-card opacity-0">
-          <div className="rounded-[32px] border border-white/10 bg-white/6 p-5 shadow-[0_30px_80px_rgba(0,0,0,0.25)] backdrop-blur-xl">
-            <div className="rounded-[24px] border border-white/10 bg-[rgba(255,255,255,0.05)] p-6">
+          <div className="rounded-[32px] border border-[rgba(var(--color-white-rgb),0.1)] bg-[rgba(var(--color-white-rgb),0.06)] p-5 shadow-[0_30px_80px_rgba(0,0,0,0.25)] backdrop-blur-xl">
+            <div className="rounded-[24px] border border-[rgba(var(--color-white-rgb),0.1)] bg-[rgba(var(--color-white-rgb),0.05)] p-6">
               <p className="text-[13px] uppercase tracking-[2px] text-white/55">What I deliver</p>
               <div className="mt-6 space-y-5">
                 {[

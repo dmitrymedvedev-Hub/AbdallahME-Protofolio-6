@@ -65,7 +65,7 @@ function SkillsSection() {
           {skillCategories.map((category) => (
             <div
               key={category.label}
-              className="group relative p-6 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-sm transition-all duration-500 hover:bg-white/[0.06] hover:border-[var(--color-accent)]/30 hover:shadow-[0_8px_32px_rgba(var(--color-accent-rgb),0.1)]"
+              className="group relative p-6 rounded-3xl bg-[rgba(var(--color-white-rgb),0.03)] border border-[rgba(var(--color-white-rgb),0.1)] backdrop-blur-sm transition-all duration-500 hover:bg-[rgba(var(--color-white-rgb),0.06)] hover:border-[var(--color-accent)]/30 hover:shadow-[0_8px_32px_rgba(var(--color-accent-rgb),0.1)]"
             >
               {/* Icon */}
               <div className="flex items-center gap-4 mb-4">
