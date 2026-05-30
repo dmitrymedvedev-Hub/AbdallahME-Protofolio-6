@@ -138,7 +138,7 @@
   }
 
   /* Utility mappings used by sidebar markup: darker glassy translucent background tied to home background */
-  [data-slot="sidebar"] { background: linear-gradient(180deg, rgba(7,24,39,0.94), rgba(7,24,39,0.86)); color: var(--sidebar-foreground); backdrop-filter: blur(14px) saturate(120%); -webkit-backdrop-filter: blur(14px) saturate(120%); border-right: 1px solid rgba(255,255,255,0.08); box-shadow: 8px 0 24px rgba(2,6,10,0.6); z-index:60; }
+  [data-slot="sidebar"] { background: linear-gradient(180deg, rgba(7,24,39,0.99), rgba(7,24,39,0.98)); color: var(--sidebar-foreground); backdrop-filter: blur(10px) saturate(120%); -webkit-backdrop-filter: blur(10px) saturate(120%); border-right: 1px solid rgba(255,255,255,0.14); box-shadow: 12px 0 36px rgba(2,6,10,0.72); z-index:70; }
   [data-slot="sidebar"] { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; font-size: 14px; }
   .bg-sidebar { background: linear-gradient(180deg, rgba(7,24,39,0.92), rgba(7,24,39,0.6)); }
   .text-sidebar-foreground { color: var(--sidebar-foreground); }
@@ -153,7 +153,7 @@
   [data-slot="sidebar"] [data-sidebar="header"] { padding: 0.75rem 0.5rem 0.5rem; }
   [data-slot="sidebar"] [data-sidebar="footer"] { padding: 0.75rem 0.5rem; color: var(--sidebar-muted); font-size: 13px; }
   [data-slot="sidebar"] a, [data-slot="sidebar"] button { color: var(--sidebar-foreground); }
-  [data-slot="sidebar"] .surface-card-dark { background: linear-gradient(180deg, rgba(7,24,39,0.98), rgba(7,24,39,0.86)); box-shadow: 0 8px 30px rgba(2,6,10,0.6); border-right: 1px solid rgba(255,255,255,0.06); }
+  [data-slot="sidebar"] .surface-card-dark { background: linear-gradient(180deg, rgba(7,24,39,1), rgba(7,24,39,0.92)); box-shadow: 0 12px 40px rgba(2,6,10,0.72); border-right: 1px solid rgba(255,255,255,0.12); }
   [data-slot="sidebar-container"] { z-index: 60; }
 
   /* Utility to offset main content when sidebar is visible (works if sidebar wrapper precedes main) */
