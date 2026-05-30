@@ -23,9 +23,14 @@
     --color-accent-rgb: 14 165 164;
     --color-background-rgb: 246 251 253;
     /* Sidebar specific tokens */
-    --color-sidebar-bg: #0f1724; /* dark slate for sidebar */
-    --color-sidebar-text: #e6eef2; /* light text for sidebar */
+    --color-sidebar-bg: #0b1220; /* darker slate for sidebar */
+    --color-sidebar-text: #e9f1f3; /* light text for sidebar */
     --color-sidebar-border: rgba(255,255,255,0.04);
+    /* sidebar semantic colors */
+    --sidebar-foreground-rgb: 233 241 243;
+    --sidebar-foreground: rgba(var(--sidebar-foreground-rgb), 0.94);
+    --sidebar-muted: rgba(var(--sidebar-foreground-rgb), 0.60);
+    --sidebar-subtle: rgba(var(--sidebar-foreground-rgb), 0.22);
     --color-white-rgb: 255 255 255;
     --color-glow-1: rgba(var(--color-accent-rgb), 0.66);
     --color-glow-2: rgba(var(--color-accent-rgb), 0.55);
@@ -133,11 +138,22 @@
   }
 
   /* Utility mappings used by sidebar markup: darker glassy translucent background tied to home background */
-  [data-slot="sidebar"] { background: linear-gradient(180deg, rgba(3,7,18,0.64), rgba(var(--color-text-rgb),0.06)); color: var(--sidebar-foreground); backdrop-filter: blur(12px) saturate(110%); -webkit-backdrop-filter: blur(12px) saturate(110%); border-right: 1px solid rgba(255,255,255,0.04); }
+  [data-slot="sidebar"] { background: linear-gradient(180deg, rgba(2,8,18,0.72), rgba(3,7,18,0.36)); color: var(--sidebar-foreground); backdrop-filter: blur(16px) saturate(120%); -webkit-backdrop-filter: blur(16px) saturate(120%); border-right: 1px solid rgba(255,255,255,0.06); }
+  [data-slot="sidebar"] { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; font-size: 14px; }
   .bg-sidebar { background: linear-gradient(180deg, rgba(3,7,18,0.64), rgba(var(--color-text-rgb),0.06)); }
   .text-sidebar-foreground { color: var(--sidebar-foreground); }
   .border-sidebar-border { border-color: var(--sidebar-border); }
   .bg-sidebar-accent { background: linear-gradient(90deg, rgba(var(--color-accent-rgb),0.06), rgba(var(--color-accent-rgb),0.03)); }
+
+  /* Sidebar typography & spacing for modern look */
+  [data-slot="sidebar"] [data-sidebar="group-label"] { color: var(--sidebar-muted); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; padding-left: 0.5rem; }
+  [data-slot="sidebar"] [data-sidebar="menu-button"] { color: var(--sidebar-foreground); font-weight: 600; font-size: 0.95rem; padding: 0.6rem 0.75rem; border-radius: 8px; }
+  [data-slot="sidebar"] [data-sidebar="menu-badge"] { background: transparent; color: var(--sidebar-muted); font-weight: 600; }
+  [data-slot="sidebar"] [data-sidebar="menu-sub-button"] { color: var(--sidebar-foreground); font-weight: 500; }
+  [data-slot="sidebar"] [data-sidebar="header"] { padding: 0.75rem 0.5rem 0.5rem; }
+  [data-slot="sidebar"] [data-sidebar="footer"] { padding: 0.75rem 0.5rem; color: var(--sidebar-muted); font-size: 13px; }
+  [data-slot="sidebar"] a, [data-slot="sidebar"] button { color: var(--sidebar-foreground); }
+  [data-slot="sidebar"] .surface-card-dark { background: linear-gradient(180deg, rgba(3,7,18,0.76), rgba(3,7,18,0.44)); }
   .text-sidebar-accent-foreground { color: var(--sidebar-accent-foreground); }
   .ring-sidebar-ring { --tw-ring-color: var(--sidebar-ring); }
 
