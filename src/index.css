@@ -23,7 +23,7 @@
     --color-accent-rgb: 14 165 164;
     --color-background-rgb: 246 251 253;
     /* Sidebar specific tokens */
-    --color-sidebar-bg: #0b1220; /* darker slate for sidebar */
+    --color-sidebar-bg: #071827; /* deep teal-blue for sidebar */
     --color-sidebar-text: #e9f1f3; /* light text for sidebar */
     --color-sidebar-border: rgba(255,255,255,0.04);
     /* sidebar semantic colors */
@@ -138,9 +138,9 @@
   }
 
   /* Utility mappings used by sidebar markup: darker glassy translucent background tied to home background */
-  [data-slot="sidebar"] { background: linear-gradient(180deg, rgba(2,8,18,0.72), rgba(3,7,18,0.36)); color: var(--sidebar-foreground); backdrop-filter: blur(16px) saturate(120%); -webkit-backdrop-filter: blur(16px) saturate(120%); border-right: 1px solid rgba(255,255,255,0.06); }
+  [data-slot="sidebar"] { background: linear-gradient(180deg, rgba(7,24,39,0.94), rgba(7,24,39,0.86)); color: var(--sidebar-foreground); backdrop-filter: blur(14px) saturate(120%); -webkit-backdrop-filter: blur(14px) saturate(120%); border-right: 1px solid rgba(255,255,255,0.08); box-shadow: 8px 0 24px rgba(2,6,10,0.6); z-index:60; }
   [data-slot="sidebar"] { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; font-size: 14px; }
-  .bg-sidebar { background: linear-gradient(180deg, rgba(3,7,18,0.64), rgba(var(--color-text-rgb),0.06)); }
+  .bg-sidebar { background: linear-gradient(180deg, rgba(7,24,39,0.92), rgba(7,24,39,0.6)); }
   .text-sidebar-foreground { color: var(--sidebar-foreground); }
   .border-sidebar-border { border-color: var(--sidebar-border); }
   .bg-sidebar-accent { background: linear-gradient(90deg, rgba(var(--color-accent-rgb),0.06), rgba(var(--color-accent-rgb),0.03)); }
@@ -153,7 +153,17 @@
   [data-slot="sidebar"] [data-sidebar="header"] { padding: 0.75rem 0.5rem 0.5rem; }
   [data-slot="sidebar"] [data-sidebar="footer"] { padding: 0.75rem 0.5rem; color: var(--sidebar-muted); font-size: 13px; }
   [data-slot="sidebar"] a, [data-slot="sidebar"] button { color: var(--sidebar-foreground); }
-  [data-slot="sidebar"] .surface-card-dark { background: linear-gradient(180deg, rgba(3,7,18,0.76), rgba(3,7,18,0.44)); }
+  [data-slot="sidebar"] .surface-card-dark { background: linear-gradient(180deg, rgba(7,24,39,0.98), rgba(7,24,39,0.86)); box-shadow: 0 8px 30px rgba(2,6,10,0.6); border-right: 1px solid rgba(255,255,255,0.06); }
+  [data-slot="sidebar-container"] { z-index: 60; }
+
+  /* Utility to offset main content when sidebar is visible (works if sidebar wrapper precedes main) */
+  @media (min-width: 768px) {
+    .sidebar-wrapper + main,
+    .sidebar-wrapper ~ main,
+    .sidebar-wrapper + [data-slot="sidebar-inset"] {
+      margin-left: var(--sidebar-width);
+    }
+  }
   .text-sidebar-accent-foreground { color: var(--sidebar-accent-foreground); }
   .ring-sidebar-ring { --tw-ring-color: var(--sidebar-ring); }
 
